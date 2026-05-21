@@ -62,13 +62,13 @@ const ProductList = () => {
             <div key={item.id}>
              <h1>{item.category}</h1>
              <img   src={item.images[0]} width={200} height={200} alt="" />
-              <h3>{item.id}</h3>
               <h2>{item.title}</h2>
               <p>{item.description}</p>
              
               <h4>${item.price}</h4>
-              <button onClick={() => (dispatch(addToCart(item)))}>Add to cart</button>
-
+              
+              <button onClick={()=>navigate(`/ProductDetails/${item.id}`)}>View Details</button>
+              
             </div>
           )
 
