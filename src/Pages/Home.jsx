@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
         <Navbar/>
-        <h1>Welcome to Home  page {data}</h1>
+        <h1>Welcome, {data} — Your Shopping Journey Starts Here 🛒 </h1>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import { loginUser } from '../redux/logSlice';
 
 
 const Login = () => {
-
+    const [userName,setUserName]=useState("")
     const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
 
@@ -17,8 +17,8 @@ const Login = () => {
     const handleLogin=(e)=>{
         e.preventDefault()
         if(user==="r" && password==="R"){
-            const u="Ranjith"
-            dispatch(loginUser(u))
+            
+            dispatch(loginUser(userName))
             navigate("/Home")
             
             
@@ -31,13 +31,15 @@ const Login = () => {
 
     return (
         <div>
-            <h1>Login</h1>
+            <h1>Login </h1>
 
            <form onSubmit={handleLogin}>
+            <label htmlFor="fname">Name :</label>
+            <input type="text" id='fname' placeholder='Enter Your Name' onChange={(e)=>(setUserName(e.target.value))}/><br /><br />
              <label htmlFor="uName">User Name :</label>
-            <input type="text" autoComplete="current-UserName" onChange={(e) => setUser(e.target.value)} /> <br /><br />
-            <label htmlFor="password">Password :</label>
-            <input type="password"  autoComplete="current-password" onChange={(e) => setPassword(e.target.value)} />
+            <input type="text" id='uName' autoComplete="current-UserName" onChange={(e) => setUser(e.target.value)} /> <br /><br />
+            <label htmlFor="pass">Password :</label>
+            <input type="password"  id='pass' autoComplete="current-password" onChange={(e) => setPassword(e.target.value)} /> <br /><br />
             <button type="submit">Login</button>
            </form>
         </div>

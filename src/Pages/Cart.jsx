@@ -27,7 +27,7 @@ const Cart = () => {
                             <img   src={item.images[0]} width={200} height={200} alt="" />
                             <h2>{item.title}</h2>
                             <h3>{item.category}</h3>
-                            <h4>${item.price}</h4>
+                            <h4>₹ {Math.floor(item.price*80)}</h4>
                             <button onClick={()=>(dispatch(decreaseQty(item.id)))} >-</button><span> { item.quantity} </span><button onClick={()=>(dispatch(increaseQty(item.id)))}>+</button><br /><br />
                             <button onClick={()=>(dispatch(removeQty(item.id)))}>Remove</button>
                            
@@ -37,7 +37,7 @@ const Cart = () => {
                     
                 )
             }
-             <h1>Total Amount =<u>{price.toFixed(3)}</u></h1>
+             <h1>Total Amount = ₹ <u>{Math.floor(price * 80)}</u></h1>
 
         </div>
     )

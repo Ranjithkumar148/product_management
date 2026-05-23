@@ -35,7 +35,7 @@ const ProductDetails = () => {
 
       <h1>{singleProduct.title}</h1>
 
-      <h2>₹ {singleProduct.price}</h2>
+      <h2>₹ {Math.floor(singleProduct.price*80)}</h2>
 
       <p>{singleProduct.description}</p>
 
