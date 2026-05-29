@@ -11,7 +11,7 @@ const ProductList = () => {
   const data = useSelector(state => state.product.products)
   console.log(data)
   useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=150")
+    fetch("https://dummyjson.com/products?limit=200")
       .then(res => res.json())
       .then(data => (dispatch(setProducts(data.products))))
   }, [])
@@ -45,39 +45,45 @@ const ProductList = () => {
     })
   return (
 
-    <div>
+    <div className="product-list-container">
       <Navbar />
-      <input type="search" placeholder='search product' onChange={(e) => (setSearch(e.target.value))} />
-      <select onChange={(e) => (setSortType(e.target.value))}>
-        <option value="">Filter</option>
-        <option value="A to Z">A-Z</option>
-        <option value="Z to A">Z-A</option>
-        <option value="L to H">Low to High</option>
-        <option value="H to L">High to Low</option>
-      </select>
+      <div className="controls-bar">
+        <input type="search" className="search-input" placeholder='search product' onChange={(e) => (setSearch(e.target.value))} />
+        <select className="sort-select" onChange={(e) => (setSortType(e.target.value))}>
+          <option value="">Filter</option>
+          <option value="A to Z">A-Z</option>
+          <option value="Z to A">Z-A</option>
+          <option value="L to H">Low to High</option>
+          <option value="H to L">High to Low</option>
+        </select>
+      </div>
 
-      {
-        filterProducts.length>0 ? (
-          filterProducts.map((item) => {
-          return (
-            <div key={item.id}>
-              <h1>{item.category.charAt(0).toUpperCase() + item.category.slice(1)}</h1>
-              <img src={item.images[0]} width={200} height={200} alt="" />
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+      <div className="products-grid">
+        {
+          filterProducts.length>0 ? (
+            filterProducts.map((item) => {
+            return (
+              <div key={item.id} className="product-card">
+                <span className="product-category">{item.category.charAt(0).toUpperCase() + item.category.slice(1)}</span>
+                <div className="product-image-container">
+                  <img className="product-image" src={item.images[0]} width={200} height={200} alt="" />
+                </div>
+                <h3 className="product-title">{item.title}</h3>
+                <p className="product-description">{item.description}</p>
 
-              <h4>₹ {Math.floor(item.price * 80)}</h4>
+                <h4 className="product-price">₹ {Math.floor(item.price * 80)}</h4>
 
-              <button onClick={() => navigate(`/ProductDetails/${item.id}`)}>View Details</button>
+                <button className="details-button" onClick={() => navigate(`/ProductDetails/${item.id}`)}>View Details</button>
 
-            </div>
+              </div>
+            )
+
+          })
+          ):(
+            <h1 className="no-products-message">No Products Found.Please select different Product!!!</h1>
           )
-
-        })
-        ):(
-          <h1>No Products Found.Please select different Product!!!</h1>
-        )
-      }
+        }
+      </div>
 
     </div>
   )

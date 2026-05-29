@@ -12,24 +12,29 @@ const Cart = () => {
    
     console.log(data)
     return (
-        <div>
+        <div className="cart-container">
             <Navbar />
-            <h2>Cart Total Items : {data.length}</h2>
+            <h2 className="cart-title">Cart Total Items : {data.length}</h2>
             {
                 data.length===0?(
-                    <h2>Cart is Empty........</h2>
+                    <h2 className="cart-empty">Cart is Empty........</h2>
                 ):(
                     
                         data.map((item) => {
                     return (
-                        <div key={item.id}>
-                            <h1>{item.id}</h1>
-                            <img   src={item.images[0]} width={200} height={200} alt="" />
-                            <h2>{item.title}</h2>
-                            <h3>{item.category}</h3>
-                            <h4>₹ {Math.floor(item.price*80)}</h4>
-                            <button onClick={()=>(dispatch(decreaseQty(item.id)))} >-</button><span> { item.quantity} </span><button onClick={()=>(dispatch(increaseQty(item.id)))}>+</button><br /><br />
-                            <button onClick={()=>(dispatch(removeQty(item.id)))}>Remove</button>
+                        <div key={item.id} className="cart-item">
+                            <h1 className="cart-item-id">{item.id}</h1>
+                            <img className="cart-item-image" src={item.images[0]} width={200} height={200} alt="" />
+                            <h2 className="cart-item-title">{item.title}</h2>
+                            <h3 className="cart-item-category">{item.category}</h3>
+                            <h4 className="cart-item-price">₹ {Math.floor(item.price*80)}</h4>
+                            <div className="cart-qty-controls">
+                                <button className="qty-btn" onClick={()=>(dispatch(decreaseQty(item.id)))} >-</button>
+                                <span className="qty-val"> { item.quantity} </span>
+                                <button className="qty-btn" onClick={()=>(dispatch(increaseQty(item.id)))}>+</button>
+                            </div>
+                            <br /><br />
+                            <button className="remove-btn" onClick={()=>(dispatch(removeQty(item.id)))}>Remove</button>
                            
                         </div>
                     )
@@ -37,7 +42,7 @@ const Cart = () => {
                     
                 )
             }
-             <h1>Total Amount = ₹ <u>{Math.floor(price * 80)}</u></h1>
+             <h1 className="cart-total">Total Amount = ₹ <u>{Math.floor(price * 80)}</u></h1>
 
         </div>
     )
