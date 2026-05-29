@@ -36,7 +36,7 @@ const Login = () => {
 
                <form onSubmit={handleLogin} className="login-form">
                 <label htmlFor="fname">Name :</label>
-                <input type="text" id='fname' placeholder='Enter Your Beautiful Nmae' onChange={(e)=>(setUserName(e.target.value))}/><br /><br />
+                <input type="text" id='fname' placeholder='Enter Your Name' onChange={(e)=>(setUserName(e.target.value))}/><br /><br />
                  <label htmlFor="uName">User Name :</label>
                 <input type="text" id='uName' autoComplete="current-UserName" onChange={(e) => setUser(e.target.value)} /> <br /><br />
                 <label htmlFor="pass">Password :</label>
