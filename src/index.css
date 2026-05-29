@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Outfit:wght@600;800&display=swap');
 
 :root {
   --bg-primary: #030712;
@@ -94,6 +94,29 @@ input:focus, select:focus, button:focus {
 .navbar:hover {
   border-color: var(--border-hover);
   box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.15);
+}
+
+.navbar-title {
+  font-family: 'Space Grotesk', 'Outfit', var(--font-sans);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 25px;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  user-select: none;
+}
+
+.navbar-title:hover {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 25px rgba(59, 130, 246, 0.45);
+  transform: translateY(-1px) scale(1.02);
 }
 
 .nav-link {
