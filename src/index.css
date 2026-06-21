@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-=======
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Outfit:wght@600;800&display=swap');
->>>>>>> 812958322ef69aa527e19a32a31f2e5991da87ce
 
 :root {
   --bg-primary: #030712;
@@ -100,8 +96,6 @@ input:focus, select:focus, button:focus {
   box-shadow: 0 8px 32px 0 rgba(14, 165, 233, 0.15);
 }
 
-<<<<<<< HEAD
-=======
 .navbar-title {
   font-family: 'Space Grotesk', 'Outfit', var(--font-sans);
   font-weight: 800;
@@ -124,8 +118,6 @@ input:focus, select:focus, button:focus {
   text-shadow: 0 0 25px rgba(59, 130, 246, 0.45);
   transform: translateY(-1px) scale(1.02);
 }
-
->>>>>>> 812958322ef69aa527e19a32a31f2e5991da87ce
 .nav-link {
   color: var(--text-secondary);
   font-weight: 600;
@@ -236,11 +228,7 @@ input:focus, select:focus, button:focus {
   display: none;
 }
 
-<<<<<<< HEAD
 .login-button ,.register-button{
-=======
-.login-button {
->>>>>>> 812958322ef69aa527e19a32a31f2e5991da87ce
   width: 100%;
   padding: 14px;
   margin-top: 30px;
@@ -255,21 +243,13 @@ input:focus, select:focus, button:focus {
   box-shadow: 0 4px 15px var(--accent-glow);
 }
 
-<<<<<<< HEAD
 .login-button:hover, .register-button:hover {
-=======
-.login-button:hover {
->>>>>>> 812958322ef69aa527e19a32a31f2e5991da87ce
   background: var(--accent-cyan-hover);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px var(--accent-glow-strong);
 }
 
-<<<<<<< HEAD
 .login-button:active, .register-button:active {
-=======
-.login-button:active {
->>>>>>> 812958322ef69aa527e19a32a31f2e5991da87ce
   transform: translateY(0);
 }
 
