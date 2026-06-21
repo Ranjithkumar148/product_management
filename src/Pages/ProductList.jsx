@@ -10,7 +10,7 @@ const ProductList = () => {
   const navigate = useNavigate()
   const data = useSelector(state => state.product.products)
   const [page, setPage] = useState(0)
-  const size = 30
+  const size = 20
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products?limit=${size}&skip=${page * size}`)
