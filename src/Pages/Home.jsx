@@ -12,7 +12,7 @@ const Home = () => {
     <div className="home-container">
         <Navbar/>
         <div className="home-hero">
-            <h1 className="home-title">Welcome, {data?.name} — Your Shopping Journey Starts Here 🛒 </h1>
+            <h1 className="home-title">Welcome,{data.name} — Your Shopping Journey Starts Here 🛒 </h1>
             <img src="/hero_neon_cart.png" className="home-image" alt="Neon Shopping Cart" />
         </div>
     </div>
