@@ -31,7 +31,6 @@ const Login = () => {
             const result = await res.json()
             if (result) {
                 
-                dispatch(loginUser(result));
 
                 dispatch(loginUser(result))
                 navigate("/Home")
@@ -46,6 +45,7 @@ const Login = () => {
 
         } catch (err) {
             console.log(err)
+            alert("Connection error: " + err.message)
         }
 
 

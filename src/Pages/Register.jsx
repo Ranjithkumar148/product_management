@@ -49,6 +49,7 @@ const Register = () => {
         
                 } catch (err) {
                     console.log(err)
+                    alert("Connection error: " + err.message)
                 }
     }
 
