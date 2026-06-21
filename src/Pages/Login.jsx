@@ -57,22 +57,14 @@ const Login = () => {
                 <h1 className="login-title">Login </h1>
 
                <form onSubmit={handleLogin} className="login-form">
-<<<<<<< HEAD
             
-=======
-                <label htmlFor="fname">Name :</label>
-                <input type="text" id='fname' placeholder='Enter Your Name' onChange={(e)=>(setUserName(e.target.value))}/><br /><br />
->>>>>>> 812958322ef69aa527e19a32a31f2e5991da87ce
                  <label htmlFor="uName">User Name :</label>
                 <input type="text" id='uName' autoComplete="current-UserName" onChange={(e) => setUser(e.target.value)} /> <br /><br />
                 <label htmlFor="pass">Password :</label>
                 <input type="password"  id='pass' autoComplete="current-password" onChange={(e) => setPassword(e.target.value)} /> <br /><br />
                 <button type="submit" className="login-button">Login</button>
                </form>
-<<<<<<< HEAD
                 <button onClick={() => navigate("/Register")} className="register-button">Register</button>
-=======
->>>>>>> 812958322ef69aa527e19a32a31f2e5991da87ce
             </div>
         </div>
     )
