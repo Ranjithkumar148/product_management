@@ -14,34 +14,58 @@ const Login = () => {
     
 
 
-    const handleLogin=(e)=>{
+   const handleLogin = async (e) => {
         e.preventDefault()
-        if(user==="r" && password==="R"){
-            
-            dispatch(loginUser(userName))
-            navigate("/Home")
-            
-            
+        try {
+            const res = await fetch("https://heartfelt-wisdom-production-d9eb.up.railway.app/users/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
 
-        }else{
-            alert("Login Invalid")
+                },
+                body: JSON.stringify({
+                    username: user,
+                    password: password
+                })
+            })
+            const result = await res.json()
+            if (result) {
+                
+                dispatch(loginUser(result));
 
+                dispatch(loginUser(result))
+                navigate("/Home")
+
+
+
+            } else {
+                alert("Login Invalid")
+
+            }
+
+
+        } catch (err) {
+            console.log(err)
         }
+
+
     }
 
     return (
-        <div>
-            <h1>Login </h1>
+        <div className="login-container">
+            <div className="login-card">
+                <h1 className="login-title">Login </h1>
 
-           <form onSubmit={handleLogin}>
-            <label htmlFor="fname">Name :</label>
-            <input type="text" id='fname' placeholder='Enter Your Name' onChange={(e)=>(setUserName(e.target.value))}/><br /><br />
-             <label htmlFor="uName">User Name :</label>
-            <input type="text" id='uName' autoComplete="current-UserName" onChange={(e) => setUser(e.target.value)} /> <br /><br />
-            <label htmlFor="pass">Password :</label>
-            <input type="password"  id='pass' autoComplete="current-password" onChange={(e) => setPassword(e.target.value)} /> <br /><br />
-            <button type="submit">Login</button>
-           </form>
+               <form onSubmit={handleLogin} className="login-form">
+            
+                 <label htmlFor="uName">User Name :</label>
+                <input type="text" id='uName' autoComplete="current-UserName" onChange={(e) => setUser(e.target.value)} /> <br /><br />
+                <label htmlFor="pass">Password :</label>
+                <input type="password"  id='pass' autoComplete="current-password" onChange={(e) => setPassword(e.target.value)} /> <br /><br />
+                <button type="submit" className="login-button">Login</button>
+               </form>
+                <button onClick={() => navigate("/Register")} className="register-button">Register</button>
+            </div>
         </div>
     )
 }

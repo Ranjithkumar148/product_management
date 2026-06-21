@@ -7,10 +7,14 @@ const Home = () => {
 
     const data=useSelector(state=>state.user.user)
     
+    
   return (
-    <div>
+    <div className="home-container">
         <Navbar/>
-        <h1>Welcome, {data} — Your Shopping Journey Starts Here 🛒 </h1>
+        <div className="home-hero">
+            <h1 className="home-title">Welcome,{data.name} — Your Shopping Journey Starts Here 🛒 </h1>
+            <img src="/hero_neon_cart.png" className="home-image" alt="Neon Shopping Cart" />
+        </div>
     </div>
   )
 }
